@@ -1,7 +1,9 @@
 # TicTacToe
 A multiplayer TicTacToe game in python
 Prerequisites:
--  Install Python3
+-  Python3
+-  git
+-  
 To play the game:
 ```shell
 git clone --depth 1 https://github.com/thanvirdiouf/TicTacToe.git
