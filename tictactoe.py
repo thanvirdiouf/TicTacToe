@@ -1,7 +1,7 @@
 import copy
 space=" "
-cross="x"
-circle="o"
+cross="X"
+circle="O"
 data=[space,space,space,space,space,space,space,space,space]
 
 def displayboard(data):
@@ -25,10 +25,11 @@ def updatedata(data,symbol,position,chance):
     return data,chance
 
 def wincheck(data):
-    if data[0]==data[1]==data[2]!=space or data[3]==data[4]==data[5]!=space or data[6]==data[7]==data[8]!=space or data[0]==data[3]==data[6]!=space or data[1]==data[4]==data[7]!=space or data[2]==data[5]==data[8]!=space or data[0]==data[4]==data[8]!=space or data[6]==data[4]==data[2]!=space:
-        return True
-    else:
-        return False
+    win_conditions=[(0,1,2),(3,4,5),(6,7,8),(0,3,6),(1,4,7),(2,5,8),(0,4,8),(2,4,6)]
+    for i,j,k in win_conditions:
+        if data[i]==data[j]==data[k]!=space:
+            return True
+    return False
 
 print("Welcome to TicTacToe\nSelect symbol of Player 1\n1) X\n2) O")
 players={}
